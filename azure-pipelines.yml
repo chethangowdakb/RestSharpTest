@@ -22,11 +22,3 @@ steps:
     testResultsFiles: '**/*.trx'
     failTaskOnFailedTests: true
   displayName: 'Publish Test Results'
-
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**'
-    failIfCoverageEmpty: true
-  displayName: 'Publish Code Coverage Results'
