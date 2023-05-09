@@ -22,3 +22,8 @@ steps:
     testResultsFiles: '**/*.trx'
     failTaskOnFailedTests: true
   displayName: 'Publish Test Results'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    ArtifactName: 'MyArtifact'
