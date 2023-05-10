@@ -19,4 +19,13 @@ public class UnitTest1
         var response = client.Execute(request);
         Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
     }
+    [TestMethod]
+    [TestCategory("Somoke")]
+    public void TestMethod2()
+    {
+        var request = new RestRequest("/posts", Method.Get);
+        var response = client.Execute(request);
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+        Assert.AreEqual("application/json", response.ContentType);
+    }
 }
