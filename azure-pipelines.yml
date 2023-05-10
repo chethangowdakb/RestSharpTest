@@ -19,7 +19,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'VSTest'
-    testResultsFiles: '**/*.trx'
+    testResultsFiles: '$(System.DefaultWorkingDirectory)/**/*.trx'
     failTaskOnFailedTests: true
   displayName: 'Publish Test Results'
 - task: PublishBuildArtifacts@1
